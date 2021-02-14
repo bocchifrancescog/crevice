@@ -1,11 +1,38 @@
 import 'package:flutter/material.dart';
+import 'site_detail_page.dart';
 
 class SitePage extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Site'),
+    return ListView(
+      children: [
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(),
+            title: Text('Site n1'),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                SiteDetailPage.routeName,
+                arguments: SiteDetailPageArguments('Site n1'),
+              )
+            },
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: FlutterLogo(),
+            title: Text('Site n2'),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                SiteDetailPage.routeName,
+                arguments: SiteDetailPageArguments('Site n2'),
+              )
+            },
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'site/site_page.dart';
+import 'site/site_detail_page.dart';
 import 'alert/alert_page.dart';
 
 void main() {
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
        home: RoutePage(),
+      routes: {
+        SiteDetailPage.routeName: (context) => SiteDetailPage(),
+      },
+
     );
   }
 }
