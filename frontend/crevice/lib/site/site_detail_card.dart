@@ -34,15 +34,13 @@ class SiteDetailCard extends StatelessWidget {
           ButtonBar(
             alignment: MainAxisAlignment.end,
             children: [
-              FlatButton(
-                textColor: const Color(0xFF6200EE),
+              TextButton(
                 onPressed: () {
                   // Perform some action
                 },
                 child: const Text('ACTION 1'),
               ),
-              FlatButton(
-                textColor: const Color(0xFF6200EE),
+              TextButton(
                 onPressed: () {
                   // Perform some action
                 },
