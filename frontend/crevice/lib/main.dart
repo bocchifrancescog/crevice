@@ -1,5 +1,7 @@
+import 'package:crevice/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'site/site_page.dart';
+import 'login/login_page.dart';
 import 'site/site_detail_page.dart';
 import 'alert/alert_page.dart';
 
@@ -16,40 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-       home: RoutePage(),
+       home: LoginPage(),
       routes: {
         SiteDetailPage.routeName: (context) => SiteDetailPage(),
+        LoginPage.routeName: (context) => LoginPage(),
       },
 
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
