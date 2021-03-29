@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -24,6 +26,22 @@ class _LoginPageState extends State<LoginPage> {
     pswConteoller.dispose();
     super.dispose();
   }
+
+  Future<String> login(String title) async {
+    final response = await http.post(
+      Uri.http('localhost:8080', 'api-token-auth/'), // TODO HTTPS
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'username': 'admin',
+        'password': 'admin'
+      }),
+    );
+    print(response.body); // "token" inside response
+    return response.body;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       print(_formKey.currentState);
                       return null;
                     }
+                    login('aa');
                     return showDialog(
                       context: context,
                       builder: (context) {

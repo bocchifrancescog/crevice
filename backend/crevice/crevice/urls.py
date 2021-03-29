@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
+from rest_framework.authtoken import views as drf_views
 from .api.core import views
 
 router = routers.DefaultRouter()
@@ -26,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('hello/', views.HelloView.as_view(), name='hello'),
+    path('api-token-auth/', drf_views.obtain_auth_token),
 ]
